@@ -36,7 +36,7 @@ const petitions_get = async (req, res) => {
        
         res.json({
             status: 'ok',
-            data:  await getDataProyectos(hojaCalculo)
+            data:  await getDataProyectos(hojaCalculo_ || hojaCalculo)
         });
         
     } catch (error) {
