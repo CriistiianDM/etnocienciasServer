@@ -14,15 +14,14 @@ const petitions_get = async (req, res) => {
         //sacar el body el email
         const {
             email,
-            hojaCalculo,
-            data
+            // hojaCalculo,
         } = req.body
 
         const {
-            hojaCalculo_
+            hojaCalculo
         } = req.params
 
-        console.log(hojaCalculo_, 'data.hojaCalculo')
+        console.log(hojaCalculo, 'data.hojaCalculo')
 
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
         const dispositivo = req.headers['user-agent'];
@@ -36,7 +35,7 @@ const petitions_get = async (req, res) => {
        
         res.json({
             status: 'ok',
-            data:  await getDataProyectos(hojaCalculo_)
+            data:  await getDataProyectos(hojaCalculo)
         });
         
     } catch (error) {
