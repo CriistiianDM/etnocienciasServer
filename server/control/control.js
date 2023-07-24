@@ -22,10 +22,10 @@ const petitions_get = async (req, res) => {
         const dispositivo = req.headers['user-agent'];
 
         if (email) {
-            enviarCorreo(email, {
-                ipPub: ip,
-                dispositivo: dispositivo
-            });
+            // enviarCorreo(email, {
+            //     ipPub: ip,
+            //     dispositivo: dispositivo
+            // });
         }
        
         res.json({
