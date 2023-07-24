@@ -5,7 +5,7 @@ const { petitions_get } = require('../control/control');
 const router = Router();
 
 
-router.get('/', petitions_get);
+router.get('/:hojaCalculo_', petitions_get);
 
 
 module.exports = router;
