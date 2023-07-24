@@ -19,7 +19,7 @@ const petitions_get = async (req, res) => {
 
         const {
             hojaCalculo
-        } = req.params
+        } = req.query
 
         console.log(hojaCalculo, 'data.hojaCalculo')
 
