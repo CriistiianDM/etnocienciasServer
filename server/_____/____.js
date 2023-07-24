@@ -11,14 +11,14 @@ const getDataProyectos = async (hojaCalculo) => {
 
     const sheets = google.sheets({ version: 'v4' });
     const spreadsheetId = nameHojaCalculo;
-    const range = hojaCalculo;
+    const range = hojaCalculo || 'Proyectos';
 
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
       range,
       key: apiKey, 
     });
- 
+    console.log(hojaCalculo, 'hojaCalculo')
     return  jwt.sign({ data: sheetValuesToObject(response.data.values) }, tokenAccess_.join('')); 
 
 }
