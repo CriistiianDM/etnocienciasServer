@@ -4,7 +4,7 @@
   "description": "Es un servidor nodejs con expres para el manejo de las peticiones http para las api de google",
   "main": "index.js",
   "scripts": {
-    "valenS": "node ./server/index.js",
+    "start": "node ./server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
