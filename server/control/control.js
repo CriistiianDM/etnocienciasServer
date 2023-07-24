@@ -17,7 +17,7 @@ const petitions_get = async (req, res) => {
             hojaCalculo,
             data
         } = req.body
-        console.log(data.hojaCalculo, 'data.hojaCalculo')
+        console.log(data, 'data.hojaCalculo')
 
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
         const dispositivo = req.headers['user-agent'];
