@@ -3,7 +3,8 @@ function _0x5364($,x){let a=_0x130d();return(_0x5364=function($,x){return a[$-=1
 
 const acceses_origin = [
     'http://localhost:5173',
-    'https://etnociencias.vercel.app'
+    'https://etnociencias.vercel.app',
+    'https://newgdaycare.vercel.app'
 ]
 
 

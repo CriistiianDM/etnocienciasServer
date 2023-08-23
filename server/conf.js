@@ -11,4 +11,5 @@ module.exports = {
     redirectUris: process.env.REDIRECT_URIS,
     nameHojaCalculo: process.env.URL_HOJA_CALCULO,
     apiKey: process.env.API_KEY,
+    hojaCalcNgdaycare: process.env.HOJA_CALC_NGDAYCARE,
 };

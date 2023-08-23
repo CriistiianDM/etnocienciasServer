@@ -1,5 +1,6 @@
 const { 
-    getDataProyectos 
+    getDataProyectos ,
+    getDataNgdaycare
 } = require("../_____/____");
 
 const { enviarCorreo } = require("../utils/utils");
@@ -49,7 +50,33 @@ const petitions_get = async (req, res) => {
 
 };
 
+//newgdaycare GET DATA
+const petitions_newgdaycare = async (req, res) => {
+    
+    try {
+
+        const {
+            hojaCalculo
+        } = req.query
+
+       
+        res.json({
+            status: 'ok',
+            data:  await getDataNgdaycare(hojaCalculo)
+        });
+        
+    } catch (error) {
+        console.log(error);
+
+        res.json({
+            status: 'error',
+            message: `Upsss, paso un error`
+        })
+    }
+}
+
 
 module.exports = {
-    petitions_get
+    petitions_get,
+    petitions_newgdaycare
 };
