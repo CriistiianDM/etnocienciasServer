@@ -29,23 +29,6 @@ const sheetValuesToObject = (sheetValues, headers) => {
     return peopleWithHeadings;
 }
 
-const sheetValuesToObjectNull = (sheetValues, headers) => {
-    const headings = headers || sheetValues[0].map(normalizeString);
-    const people = headers ? sheetValues.slice(1) : sheetValues;
-    
-    const peopleWithHeadings = people.map(personAsArray => {
-      const personAsObj = {};
-  
-      headings.forEach((heading, i) => {
-        personAsObj[heading] = personAsArray[i];
-      });
-  
-      return personAsObj;
-    });
-    
-    return peopleWithHeadings;
-}
-
 
 //peticion post
 const enviarCorreo = (email,data) => {
@@ -121,6 +104,5 @@ module.exports = {
     addHeadings,
     normalizeString,
     sheetValuesToObject,
-    enviarCorreo,
-    sheetValuesToObjectNull
+    enviarCorreo
 }
