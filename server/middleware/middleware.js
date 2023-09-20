@@ -13,7 +13,14 @@ const acceses_origin = [
   *  @decs  : middelware para validar que solo se puedan ingresar peticiones desde el frontend
 */
 const only_petitions_fronted = async (req, res, next) => {
-    
+    //sacar la ruta de la peticion
+    const route = req.originalUrl;
+   
+    if (route === '/uplannermoodle/') {
+        next();
+        return;
+    }
+
     if ( acceses_origin.includes((req.headers).origin)  &&
         (req.headers).authorization === tokenAccess.join('')) {
             next();

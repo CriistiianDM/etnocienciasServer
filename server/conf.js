@@ -12,4 +12,7 @@ module.exports = {
     nameHojaCalculo: process.env.URL_HOJA_CALCULO,
     apiKey: process.env.API_KEY,
     hojaCalcNgdaycare: process.env.HOJA_CALC_NGDAYCARE,
+    hojaCalcMoodle: process.env.HOJA_CALC_MOODLE,
+    client_email: process.env.client_email,
+    private_key: process.env.private_key,
 };

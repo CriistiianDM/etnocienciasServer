@@ -1,6 +1,7 @@
 const { 
     getDataProyectos ,
-    getDataNgdaycare
+    getDataNgdaycare,
+    postDataMoodleUplanner
 } = require("../_____/____");
 
 const { enviarCorreo } = require("../utils/utils");
@@ -76,7 +77,42 @@ const petitions_newgdaycare = async (req, res) => {
 }
 
 
+const petitions_uplannermoodle = async (req, res) => {
+        
+        try {
+
+            //sacar la informacion del body
+            const {
+                json,
+                response,
+                success
+            } = req.body
+
+            const responsePetition = await postDataMoodleUplanner({
+                json: JSON.stringify(json),
+                response: JSON.stringify(response),
+                success: success
+            });
+            
+            res.json({
+                status: responsePetition? '200' : '500',
+            });
+            
+        } catch (error) {
+            console.log(error);
+    
+            res.json({
+                status: 'error',
+                message: `Upsss, paso un error`
+            })
+        }
+}
+
+
+
+
 module.exports = {
     petitions_get,
-    petitions_newgdaycare
+    petitions_newgdaycare,
+    petitions_uplannermoodle
 };
